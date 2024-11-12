@@ -17,4 +17,4 @@ Este repositorio será el lugar donde subiremos todos los archivos relacionados 
 El objetivo es que puedas seleccionar tu género musical preferido entre una amplia variedad de opciones, y a partir de allí, descubrir artistas destacados dentro de ese género. No solo podrás explorar la discografía completa de estos artistas, sino también visualizar sus álbumes y canciones más representativas. Además, la página estará diseñada para que puedas reproducir las canciones directamente desde la plataforma, brindando una experiencia musical completa y fluida
 
 # Diagrama (DER)
-![Diagrama(TPE)](https://github.com/gustavorio/web-2-para-tp-especial/blob/main/diagrama%20web%202(dragon%20music).png)
+![Diagrama(TPE)](https://github.com/gustavorio/web-2-TP-especial-de-la-tercera-entrega/blob/main/dragon%20music.png)
