@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 11-10-2024 a las 20:50:35
--- Versión del servidor: 10.4.28-MariaDB
--- Versión de PHP: 8.2.4
+-- Tiempo de generación: 12-11-2024 a las 03:36:31
+-- Versión del servidor: 10.4.32-MariaDB
+-- Versión de PHP: 8.1.25
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -20,6 +20,28 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `music_player`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `comment`
+--
+
+CREATE TABLE `comment` (
+  `comment_id` int(11) NOT NULL,
+  `comment` varchar(400) NOT NULL,
+  `qualification` int(11) NOT NULL,
+  `song` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `comment`
+--
+
+INSERT INTO `comment` (`comment_id`, `comment`, `qualification`, `song`) VALUES
+(1, 'El cantante tiene una buena voz y la música es agradable; sin embargo, no logra ser particularmente memorable o emblemática. En conjunto, me parece una canción decente que cumple, pero no destaca demasiado.', 6, 1),
+(2, 'Una canción profunda y artística, con letras que invitan a la reflexión y una instrumentación impecable que complementa a la perfección su atmósfera. Realmente logra transmitir emociones de manera única', 8, 2),
+(3, 'Una canción increíble que transmite a la perfección el significado de la amistad y la alegría de vivir el momento. Su energía positiva y su mensaje de celebrar junto a quienes queremos la convierten en el tema ideal para disfrutar con amigos y crear recuerdos inolvidables.', 10, 3);
 
 -- --------------------------------------------------------
 
@@ -64,8 +86,8 @@ CREATE TABLE `songs` (
 --
 
 INSERT INTO `songs` (`id`, `title`, `duration`, `artist`, `lyrics`, `link`, `genre_id`) VALUES
-(1, 'Houdini', '03:05:00', 'Dua Lipa', '<br>Okay, huh<br>\r\nMm, ah<br>\r\n\r\n<br>I come and I go<br>\r\nTell me all the ways you need me<br>\r\nI\'m not here for long<br>\r\nCatch me or I go Houdini<br>\r\n\r\n<br>I come and I go<br>\r\nProve you got the right to please me<br>\r\nEverybody knows<br>\r\nCatch me or I go Houdini<br>\r\n\r\n<br>Time is passin\' like a solar eclipse<br>\r\nSee you watchin\' and you blow me a kiss<br>\r\nIt\'s your moment, baby, don\'t let it slip<br>\r\nCome in closer, are you readin\' my lips?<br>\r\n\r\n<br>They say I come and I go<br>\r\nTell me all the ways you need me<br>\r\nI\'m not here for long<br>\r\nCatch me or I go Houdini<br>\r\n\r\n<br>I come and I go<br>\r\nProve you got the right to please me<br>\r\nEverybody knows<br>\r\nCatch me or I go Houdini<br>\r\n\r\n<br>If you\'re good enough, you\'ll find a way<br>\r\nMaybe you could cause a girl to change (her ways)<br>\r\nDo you think about it night and day?<br>\r\nMaybe you could be the one to make me stay<br>\r\n\r\n<br>Everything you say is soundin\' so sweet (ah-ah)<br>\r\nBut do you practise everything that you preach? (Ah-ah)<br>\r\nI need something that\'ll make me believe (ah-ah)<br>\r\nIf you got it, baby, give it to me<br>\r\n\r\n<br>They say I come and I go<br>\r\nTell me all the ways you need me<br>\r\nI\'m not here for long<br>\r\nCatch me or I go Houdini<br>\r\n\r\n<br>I come and I go (I come and I go)<br>\r\nProve you got the right to please me<br>\r\nEverybody knows (I\'m not here for long)<br>\r\nCatch me or I go Houdini<br>\r\n\r\n<br>If you\'re good enough, you\'ll find a way<br>\r\nMaybe you could cause a girl to change (her ways)<br>\r\nDo you think about it night and day?<br>\r\nMaybe you could be the one to make me stay<br>\r\n\r\n<br>Oh-oh<br>\r\nOoh<br>\r\n\r\n<br>I come and I go<br>\r\nTell me all the ways you need me (ooh)<br>\r\nI\'m not here for long<br>\r\nCatch me or I go Houdini<br>\r\n\r\n<br>I come and I go (I come and I go)<br>\r\nProve you got the right to please me<br>\r\nEverybody knows (I\'m not here for long)<br>\r\nCatch me or I go Houdini<br>\r\n\r\n<br>Houdini (ah)<br>\r\nCatch me or I go Houdini<br>', 'https://open.spotify.com/embed/track/4OMJGnvZfDvsePyCwRGO7X?utm_source=generator&theme=0', 1),
-(2, 'Otherside', '04:16:00', 'Red Hot Chilli Peppers', '<br>How long, how long will I slide?<br>\r\nSeparate my side, I don\'t<br>\r\nI don\'t believe it\'s bad<br>\r\nSlit my throat, it\'s all I ever<br>\r\n\r\n<br>I heard your voice through a photograph<br>\r\nI thought it up and brought up the past<br>\r\nOnce you know you can never go back<br>\r\nI gotta take it on the other side<br>\r\n\r\n<br>Well, centuries are what it meant to me<br>\r\nA cemetery where I marry the sea<br>\r\nA stranger thing could never change my mind<br>\r\nI gotta take it on the other side<br>\r\nTake it on the other side<br>\r\nTake it on, take it on<br>\r\n\r\n<br>How long, how long will I slide?<br>\r\nSeparate my side, I don\'t<br>\r\nI don\'t believe it\'s bad<br>\r\nSlit my throat, it\'s all I ever<br>\r\n\r\n<br>Pour my life into a paper cup<br>\r\nThe ashtray\'s full and I\'m spillin\' my guts<br>\r\nShe wanna know am I still a slut?<br>\r\nI\'ve got to take it on the other side<br>\r\n\r\n<br>A scarlet starlet and she\'s in my bed<br>\r\nA candidate for the soulmate bled<br>\r\nPush the trigger and pull the thread<br>\r\nI gotta take it on the other side<br>\r\nTake it on the other side<br>\r\nTake it on, take it on<br>\r\n\r\n<br>How long, how long will I slide?<br>\r\nSeparate my side, I don\'t<br>\r\nI don\'t believe it\'s bad<br>\r\nSlit my throat, it\'s all I ever<br>\r\n\r\n<br>Turn me on, take me for a hard ride<br>\r\nBurn me out, leave me on the other side<br>\r\nI yell and tell it that it\'s not my friend<br>\r\nI tear it down, I tear it down and then it\'s born again<br>\r\n\r\n<br>How long, how long will I slide?<br>\r\nSeparate my side, I don\'t<br>\r\nI don\'t believe it\'s bad<br>\r\nSlit my throat, it\'s all I ever had<br>\r\n(How long) I don\'t<br>\r\nI don\'t believe it\'s sad<br>\r\nSlit my throat, it\'s all I ever<br>', 'https://open.spotify.com/embed/track/64BbK9SFKH2jk86U3dGj2P?utm_source=generator&theme=0', 2),
+(1, 'Houdini', '03:05:00', 'Dua Lipa', '<br>Okay, huh<br>\r\nMm, ah<br>\r\n\r\n<br>I come and I go<br>\r\nTell me all the ways you need me<br>\r\nI\'m not here for long<br>\r\nCatch me or I go Houdini<br>\r\n\r\n<br>I come and I go<br>\r\nProve you got the right to please me<br>\r\nEverybody knows<br>\r\nCatch me or I go Houdini<br>\r\n\r\n<br>Time is passin\' like a solar eclipse<br>\r\nSee you watchin\' and you blow me a kiss<br>\r\nIt\'s your moment, baby, don\'t let it slip<br>\r\nCome in closer, are you readin\' my lips?<br>\r\n\r\n<br>They say I come and I go<br>\r\nTell me all the ways you need me<br>\r\nI\'m not here for long<br>\r\nCatch me or I go Houdini<br>\r\n\r\n<br>I come and I go<br>\r\nProve you got the right to please me<br>\r\nEverybody knows<br>\r\nCatch me or I go Houdini<br>\r\n\r\n<br>If you\'re good enough, you\'ll find a way<br>\r\nMaybe you could cause a girl to change (her ways)<br>\r\nDo you think about it night and day?<br>\r\nMaybe you could be the one to make me stay<br>\r\n\r\n<br>Everything you say is soundin\' so sweet (ah-ah)<br>\r\nBut do you practise everything that you preach? (Ah-ah)<br>\r\nI need something that\'ll make me believe (ah-ah)<br>\r\nIf you got it, baby, give it to me<br>\r\n\r\n<br>They say I come and I go<br>\r\nTell me all the ways you need me<br>\r\nI\'m not here for long<br>\r\nCatch me or I go Houdini<br>\r\n\r\n<br>I come and I go (I come and I go)<br>\r\nProve you got the right to please me<br>\r\nEverybody knows (I\'m not here for long)<br>\r\nCatch me or I go Houdini<br>\r\n\r\n<br>If you\'re good enough, you\'ll find a way<br>\r\nMaybe you could cause a girl to change (her ways)<br>\r\nDo you think about it night and day?<br>\r\nMaybe you could be the one to make me stay<br>\r\n\r\n<br>Oh-oh<br>\r\nOoh<br>\r\n\r\n<br>I come and I go<br>\r\nTell me all the ways you need me (ooh)<br>\r\nI\'m not here for long<br>\r\nCatch me or I go Houdini<br>\r\n\r\n<br>I come and I go (I come and I go)<br>\r\nProve you got the right to please me<br>\r\nEverybody knows (I\'m not here for long)<br>\r\nCatch me or I go Houdini<br>\r\n\r\n<br>Houdini (ah)<br>\r\nCatch me or I go Houdini<br>', 'https://open.spotify.com/embed/track/4OMJGnvZfDvsePyCwRGO7X?utm_source=generator&theme=0', 2),
+(2, 'Otherside', '04:16:00', 'Red Hot Chilli Peppers', '<br>How long, how long will I slide?<br>\r\nSeparate my side, I don\'t<br>\r\nI don\'t believe it\'s bad<br>\r\nSlit my throat, it\'s all I ever<br>\r\n\r\n<br>I heard your voice through a photograph<br>\r\nI thought it up and brought up the past<br>\r\nOnce you know you can never go back<br>\r\nI gotta take it on the other side<br>\r\n\r\n<br>Well, centuries are what it meant to me<br>\r\nA cemetery where I marry the sea<br>\r\nA stranger thing could never change my mind<br>\r\nI gotta take it on the other side<br>\r\nTake it on the other side<br>\r\nTake it on, take it on<br>\r\n\r\n<br>How long, how long will I slide?<br>\r\nSeparate my side, I don\'t<br>\r\nI don\'t believe it\'s bad<br>\r\nSlit my throat, it\'s all I ever<br>\r\n\r\n<br>Pour my life into a paper cup<br>\r\nThe ashtray\'s full and I\'m spillin\' my guts<br>\r\nShe wanna know am I still a slut?<br>\r\nI\'ve got to take it on the other side<br>\r\n\r\n<br>A scarlet starlet and she\'s in my bed<br>\r\nA candidate for the soulmate bled<br>\r\nPush the trigger and pull the thread<br>\r\nI gotta take it on the other side<br>\r\nTake it on the other side<br>\r\nTake it on, take it on<br>\r\n\r\n<br>How long, how long will I slide?<br>\r\nSeparate my side, I don\'t<br>\r\nI don\'t believe it\'s bad<br>\r\nSlit my throat, it\'s all I ever<br>\r\n\r\n<br>Turn me on, take me for a hard ride<br>\r\nBurn me out, leave me on the other side<br>\r\nI yell and tell it that it\'s not my friend<br>\r\nI tear it down, I tear it down and then it\'s born again<br>\r\n\r\n<br>How long, how long will I slide?<br>\r\nSeparate my side, I don\'t<br>\r\nI don\'t believe it\'s bad<br>\r\nSlit my throat, it\'s all I ever had<br>\r\n(How long) I don\'t<br>\r\nI don\'t believe it\'s sad<br>\r\nSlit my throat, it\'s all I ever<br>', 'https://open.spotify.com/embed/track/64BbK9SFKH2jk86U3dGj2P?utm_source=generator&theme=0', 1),
 (3, 'The Nights', '02:56:00', 'Avicii', '<br>Once upon a younger year<br>\r\nWhen all our shadows disappeared<br>\r\nThe animals inside came out to play<br>\r\nWent face to face with all our fears<br>\r\nLearned our lessons through the tears<br>\r\n<br>Made memories we knew would never fade<br>\r\nOne day, my father, he told me, \"Son, don\'t let it slip away\"<br>\r\nHe took me in his arms, I heard him say<br>\r\n\"When you get older your wild heart will live for younger days<br>\r\nThink of me if ever you\'re afraid\"<br>\r\n<br>He said, \"One day, you\'ll leave this world behind<br>\r\nSo live a life you will remember\"<br>\r\nMy father told me when I was just a child<br>\r\n\"These are the nights that never die\"<br>\r\nMy father told me<br>\r\n<br>\"When thunderclouds start pouring down<br>\r\nLight a fire they can\'t put out<br>\r\nCarve your name into those shining stars\"<br>\r\nHe said, \"Go venture far beyond the shores<br>\r\nDon\'t forsake this life of yours<br>\r\nI\'ll guide you home no matter where you are\"<br>\r\n<br>One day, my father, he told me, \"Son, don\'t let it slip away\"<br>\r\nWhen I was just a kid, I heard him say<br>\r\n\"When you get older your wild heart will live for younger days<br>\r\nThink of me if ever you\'re afraid\"<br>\r\n<br>He said, \"One day, you\'ll leave this world behind<br>\r\nSo live a life you will remember\"<br>\r\nMy father told me when I was just a child<br>\r\n\"These are the nights that never die\"<br>\r\nMy father told me<br>\r\n<br>\"These are the nights that never die\"<br>\r\nMy father told me<br>\r\n<br>My father told me<br>', 'https://open.spotify.com/embed/track/0ct6r3EGTcMLPtrXHDvVjc?utm_source=generator&theme=0', 3);
 
 -- --------------------------------------------------------
@@ -92,6 +114,12 @@ INSERT INTO `users` (`id`, `username`, `password`) VALUES
 --
 
 --
+-- Indices de la tabla `comment`
+--
+ALTER TABLE `comment`
+  ADD PRIMARY KEY (`comment_id`);
+
+--
 -- Indices de la tabla `genres`
 --
 ALTER TABLE `genres`
@@ -115,16 +143,22 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT de la tabla `comment`
+--
+ALTER TABLE `comment`
+  MODIFY `comment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT de la tabla `genres`
 --
 ALTER TABLE `genres`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT de la tabla `songs`
 --
 ALTER TABLE `songs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT de la tabla `users`
@@ -135,6 +169,12 @@ ALTER TABLE `users`
 --
 -- Restricciones para tablas volcadas
 --
+
+--
+-- Filtros para la tabla `comment`
+--
+ALTER TABLE `comment`
+  ADD CONSTRAINT `comment_ibfk_1` FOREIGN KEY (`comment_id`) REFERENCES `songs` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `songs`
