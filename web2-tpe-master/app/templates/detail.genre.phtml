@@ -1,0 +1,50 @@
+<?php require './app/templates/header.phtml' ?>
+
+<h2 class="ps-2 fw-bold">Detalles del Genero: <?= $genre->nombre ?></h2>
+<ul class="list-group">
+    <li class="list-group-item item-task">
+        <div>
+            <b> | ID: <?= $genre->id ?>
+            | Año de Creacion: <?= $genre->año ?>
+        </div>
+        <div>
+            <b> Historia del Genero Musical: </b>
+            <span><?= $genre->descripcion ?></span>
+        </div>
+    </li>
+    <?php foreach ($songs as $item) : ?>
+
+    <h3>Cantidad de Canciones del Genero: <?= $tracks ?> </h3>
+        <li class="list-group-item item-task">
+            <div>
+                <b>Artista: <?= $item->artist ?></b>
+                <b>| Cancion: <a href="songs/<?= $item->id ?>"><?= $item->title ?></a><b>
+                | Duración: <?= $item->duration ?>
+            </div>
+        </li>
+    <?php endforeach ?>
+</ul>
+
+<?php require './app/templates/footer.phtml' ?>
+<script>
+        // Asegurarse de que el audio esté completamente cargado
+        var rugido = document.getElementById("rugido-dragon");
+
+        // Event listener que avisa cuando el audio está listo
+        rugido.addEventListener("canplaythrough", function() {
+        console.log("El audio está listo para reproducirse.");
+        });
+
+    function reproducirRugido() {
+        var rugido = document.getElementById("rugido-dragon");
+
+        // Verificar si el archivo de audio está listo
+        if (rugido.readyState >= 2) {
+            rugido.play().catch(function(error) {
+                console.log("Error al reproducir el audio: ", error);
+            });
+        } else {
+            console.log("El audio no está listo para ser reproducido.");
+        }
+    }
+</script>

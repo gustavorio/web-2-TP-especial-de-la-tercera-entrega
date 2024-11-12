@@ -1,0 +1,21 @@
+<form action="genres-save/<?= $genre->id ?>" method="POST" class="my-4">
+    <div class="row">
+        <div class="form-group">
+            <label>Editando Genero:</label>
+            <input required name="nombre" type="text" placeholder="Ingrese el nombre del Genero" class="form-control" value="<?= $genre->nombre ?>" >
+        </div>
+
+        <div class="form-group">
+            <label>Año de Creacion del Genero:</label>
+            <input required name="anio" type="number" placeholder="Ingrese el año de creacion del genero" class="form-control" value="<?= $genre->año?>"> 
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="descripcion">Historia del Genero:</label>
+        <textarea required name="descripcion" placeholder="Ingrese la descripcion historica del genero" class="form-control" rows="5"><?= $genre->descripcion?></textarea>
+    </div>
+    
+    <button type="submit" class="btn btn-primary mt-2">Guardar Cambios</button>
+    <a type="button" href="genres" class="btn btn-danger mt-2">Cancelar Edición</a>
+</form>
