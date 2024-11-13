@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 13-11-2024 a las 06:07:10
+-- Tiempo de generación: 13-11-2024 a las 06:09:59
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -46,28 +46,6 @@ INSERT INTO `canciones` (`id`, `nombre`, `duracion`, `artista`, `letra`, `url_vi
 (2, 'Otherside', '04:16:00', 'Red Hot Chilli Peppers', '<br>How long, how long will I slide?<br>\r\nSeparate my side, I don\'t<br>\r\nI don\'t believe it\'s bad<br>\r\nSlit my throat, it\'s all I ever<br>\r\n\r\n<br>I heard your voice through a photograph<br>\r\nI thought it up and brought up the past<br>\r\nOnce you know you can never go back<br>\r\nI gotta take it on the other side<br>\r\n\r\n<br>Well, centuries are what it meant to me<br>\r\nA cemetery where I marry the sea<br>\r\nA stranger thing could never change my mind<br>\r\nI gotta take it on the other side<br>\r\nTake it on the other side<br>\r\nTake it on, take it on<br>\r\n\r\n<br>How long, how long will I slide?<br>\r\nSeparate my side, I don\'t<br>\r\nI don\'t believe it\'s bad<br>\r\nSlit my throat, it\'s all I ever<br>\r\n\r\n<br>Pour my life into a paper cup<br>\r\nThe ashtray\'s full and I\'m spillin\' my guts<br>\r\nShe wanna know am I still a slut?<br>\r\nI\'ve got to take it on the other side<br>\r\n\r\n<br>A scarlet starlet and she\'s in my bed<br>\r\nA candidate for the soulmate bled<br>\r\nPush the trigger and pull the thread<br>\r\nI gotta take it on the other side<br>\r\nTake it on the other side<br>\r\nTake it on, take it on<br>\r\n\r\n<br>How long, how long will I slide?<br>\r\nSeparate my side, I don\'t<br>\r\nI don\'t believe it\'s bad<br>\r\nSlit my throat, it\'s all I ever<br>\r\n\r\n<br>Turn me on, take me for a hard ride<br>\r\nBurn me out, leave me on the other side<br>\r\nI yell and tell it that it\'s not my friend<br>\r\nI tear it down, I tear it down and then it\'s born again<br>\r\n\r\n<br>How long, how long will I slide?<br>\r\nSeparate my side, I don\'t<br>\r\nI don\'t believe it\'s bad<br>\r\nSlit my throat, it\'s all I ever had<br>\r\n(How long) I don\'t<br>\r\nI don\'t believe it\'s sad<br>\r\nSlit my throat, it\'s all I ever<br>', 'https://open.spotify.com/embed/track/64BbK9SFKH2jk86U3dGj2P?utm_source=generator&theme=0', 1),
 (3, 'The Nights', '02:56:00', 'Avicii', '<br>Once upon a younger year<br>\r\nWhen all our shadows disappeared<br>\r\nThe animals inside came out to play<br>\r\nWent face to face with all our fears<br>\r\nLearned our lessons through the tears<br>\r\n<br>Made memories we knew would never fade<br>\r\nOne day, my father, he told me, \"Son, don\'t let it slip away\"<br>\r\nHe took me in his arms, I heard him say<br>\r\n\"When you get older your wild heart will live for younger days<br>\r\nThink of me if ever you\'re afraid\"<br>\r\n<br>He said, \"One day, you\'ll leave this world behind<br>\r\nSo live a life you will remember\"<br>\r\nMy father told me when I was just a child<br>\r\n\"These are the nights that never die\"<br>\r\nMy father told me<br>\r\n<br>\"When thunderclouds start pouring down<br>\r\nLight a fire they can\'t put out<br>\r\nCarve your name into those shining stars\"<br>\r\nHe said, \"Go venture far beyond the shores<br>\r\nDon\'t forsake this life of yours<br>\r\nI\'ll guide you home no matter where you are\"<br>\r\n<br>One day, my father, he told me, \"Son, don\'t let it slip away\"<br>\r\nWhen I was just a kid, I heard him say<br>\r\n\"When you get older your wild heart will live for younger days<br>\r\nThink of me if ever you\'re afraid\"<br>\r\n<br>He said, \"One day, you\'ll leave this world behind<br>\r\nSo live a life you will remember\"<br>\r\nMy father told me when I was just a child<br>\r\n\"These are the nights that never die\"<br>\r\nMy father told me<br>\r\n<br>\"These are the nights that never die\"<br>\r\nMy father told me<br>\r\n<br>My father told me<br>', 'https://open.spotify.com/embed/track/0ct6r3EGTcMLPtrXHDvVjc?utm_source=generator&theme=0', 3),
 (22, 'Besame 2.0', '02:44:00', 'La Champions Liga', '', '', 17);
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `comentarios`
---
-
-CREATE TABLE `comentarios` (
-  `comment_id` int(11) NOT NULL,
-  `comment` varchar(400) NOT NULL,
-  `qualification` int(11) NOT NULL,
-  `song` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Volcado de datos para la tabla `comentarios`
---
-
-INSERT INTO `comentarios` (`comment_id`, `comment`, `qualification`, `song`) VALUES
-(1, 'El cantante tiene una buena voz y la música es agradable; sin embargo, no logra ser particularmente memorable o emblemática. En conjunto, me parece una canción decente que cumple, pero no destaca demasiado.', 6, 1),
-(2, 'Una canción profunda y artística, con letras que invitan a la reflexión y una instrumentación impecable que complementa a la perfección su atmósfera. Realmente logra transmitir emociones de manera única', 8, 2),
-(3, 'Una canción increíble que transmite a la perfección el significado de la amistad y la alegría de vivir el momento. Su energía positiva y su mensaje de celebrar junto a quienes queremos la convierten en el tema ideal para disfrutar con amigos y crear recuerdos inolvidables.', 10, 3);
 
 -- --------------------------------------------------------
 
@@ -123,12 +101,6 @@ ALTER TABLE `canciones`
   ADD KEY `genre_id` (`genero_id`);
 
 --
--- Indices de la tabla `comentarios`
---
-ALTER TABLE `comentarios`
-  ADD PRIMARY KEY (`comment_id`);
-
---
 -- Indices de la tabla `generos`
 --
 ALTER TABLE `generos`
@@ -151,12 +123,6 @@ ALTER TABLE `canciones`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
--- AUTO_INCREMENT de la tabla `comentarios`
---
-ALTER TABLE `comentarios`
-  MODIFY `comment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
 -- AUTO_INCREMENT de la tabla `generos`
 --
 ALTER TABLE `generos`
@@ -177,12 +143,6 @@ ALTER TABLE `usuarios`
 --
 ALTER TABLE `canciones`
   ADD CONSTRAINT `canciones_ibfk_1` FOREIGN KEY (`genero_id`) REFERENCES `generos` (`id`) ON DELETE CASCADE;
-
---
--- Filtros para la tabla `comentarios`
---
-ALTER TABLE `comentarios`
-  ADD CONSTRAINT `comentarios_ibfk_1` FOREIGN KEY (`comment_id`) REFERENCES `canciones` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
