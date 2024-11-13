@@ -14,17 +14,41 @@ class GenreApiController{
     // /api/generos
     public function getAll($req, $res) {
         $año = false;
-        // obtengo los generos de la DB
-        if(isset($req->query->año) && $req->query->año == 'false')
+        // Verificar si el año está en los parámetros de la URL
+        if (isset($req->query->año) && $req->query->año == 'false') {
             $año = true;
-        
+        }
+    
+        // Ordenar por columna si está especificado en los parámetros de la URL
         $orderBy = false;
-        if(isset($req->query->orderBy))
+        if (isset($req->query->orderBy)) {
             $orderBy = $req->query->orderBy;
-
-        $generos = $this->model->getGenres($año, $orderBy);
-        
-        // mando las tareas a la vista
+        }
+    
+        // Orden ascendente o descendente si está especificado en los parámetros de la URL
+        $sortOrder = 'ASC'; // Valor predeterminado
+        if (isset($req->query->sortOrder) && in_array(strtoupper($req->query->sortOrder), ['ASC', 'DESC'])) {
+            $sortOrder = strtoupper($req->query->sortOrder);
+        }
+    
+        // Paginación: obtener limit y page de los parámetros
+        $limit = 10; // Valor predeterminado
+        if (isset($req->query->limit)) {
+            $limit = (int)$req->query->limit;
+        }
+    
+        $page = 1; // Valor predeterminado
+        if (isset($req->query->page)) {
+            $page = (int)$req->query->page;
+        }
+    
+        // Calcular el offset para la consulta
+        $offset = ($page - 1) * $limit;
+    
+        // Obtener los géneros filtrados, ordenados y paginados desde el modelo
+        $generos = $this->model->getGenres($año, $orderBy, $sortOrder, $limit, $offset);
+    
+        // Responder con los géneros a la vista
         return $this->view->response($generos);
     }
 

@@ -1,8 +1,8 @@
 <?php
     class Request {
         public $body = null; # { nombre: 'Saludar', descripcion: 'Saludar a todos' }
-        public $params = null; # /api/tareas/:id
-        public $query = null; # ?soloFinalizadas=true
+        public $params = null; # /api/generos/:id
+        public $query = null; # ?año=true
 
         public function __construct() {
             try {

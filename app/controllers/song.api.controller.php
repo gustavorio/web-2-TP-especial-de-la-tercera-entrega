@@ -24,10 +24,23 @@ class SongApiController{
         if (isset($req->query->orderBy)) {
             $orderBy = $req->query->orderBy;
         }
-
-        // Llamar al modelo para obtener las canciones filtradas y ordenadas
-        $canciones = $this->model->getSongs($genero_id, $orderBy);
-
+    
+        // Orden ascendente o descendente si está especificado en los parámetros de la URL
+        $sortOrder = 'ASC'; // valor predeterminado
+        if (isset($req->query->sortOrder) && in_array(strtoupper($req->query->sortOrder), ['ASC', 'DESC'])) {
+            $sortOrder = strtoupper($req->query->sortOrder);
+        }
+    
+        // Parámetros de paginación
+        $limit = isset($req->query->limit) ? (int)$req->query->limit : 10; // límite predeterminado de canciones por página
+        $page = isset($req->query->page) ? (int)$req->query->page : 1; // página predeterminada es 1
+    
+        // Calcular el offset para la paginación
+        $offset = ($page - 1) * $limit;
+    
+        // Llamar al modelo para obtener las canciones filtradas, ordenadas y paginadas
+        $canciones = $this->model->getSongs($genero_id, $orderBy, $sortOrder, $limit, $offset);
+    
         // Responder con las canciones a la vista
         return $this->view->response($canciones);
     }
