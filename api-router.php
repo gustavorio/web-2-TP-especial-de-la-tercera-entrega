@@ -15,10 +15,10 @@
     $router->addRoute('generos/:id',    'PUT',       'GenreApiController',   'update');
 
     #CANCIONES         endpoint             verbo           controller          metodo            
-    $router->addRoute('canciones/'   ,      'GET',      'SongApiController',    'getAll');
+    $router->addRoute('canciones'   ,      'GET',      'SongApiController',    'getAll');
     $router->addRoute('canciones/:id',      'GET',      'SongApiController',    'get');
     $router->addRoute('canciones/:id',      'DELETE',   'SongApiController',    'delete'); 
-    $router->addRoute('canciones/'   ,      'POST',     'SongApiController',    'create');
+    $router->addRoute('canciones'   ,      'POST',     'SongApiController',    'create');
     $router->addRoute('canciones/:id',      'PUT',      'SongApiController',    'update');
 
 
