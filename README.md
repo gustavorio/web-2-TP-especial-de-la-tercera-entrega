@@ -11,7 +11,7 @@ Entrega 17/11/2024 TPE 3°
 Gustavo Nahuel Rio y Lucas Cueli
 
 ## Descripción General
-Esta API permite gestionar **géneros musicales**, **canciones** y **usuarios**. Los endpoints de modificación (POST, PUT, DELETE) requieren autenticación mediante un **token JWT** que se obtiene a través del endpoint `/usuarios/token`.
+Esta API permite gestionar **géneros musicales**, **canciones** y **usuarios**. No llegamos a añadir los endpoints de modificación (POST, PUT, DELETE) requieren autenticación mediante un **token JWT** que se obtendria a través del endpoint `/usuarios/token`.
 
 ---
 
